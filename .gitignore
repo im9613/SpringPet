@@ -1,0 +1,69 @@
+# parentheses are only for demonstration, so don't actually use them while setting up path for files or directories to be ignored!!!
+# 괄호는 이해를 돕기 위한 목적으로만 사용했고, 실제 .gitignore에서 입력 시 괄호 없이 입력해야함
+
+# .(directory_name)/
+# 경로에 상관 없이 괄호안의 이름을 가진 폴더에 하위 폴더/파일 내용을 전부 무시
+
+# .(file_name)
+# 경로에 상관없이 괄호안의 이름으로 끝나는 파일을 모두 무시
+
+#무시할 폴더 목록
+#directories to be ignored
+.metadata/
+.settings/
+Servers/
+
+# Un-ignore specific directory
+!.metadata/.sts/content/org.springframework.templates.mvc-3.2.2/
+!.metadata/.plugins/org.springsource.ide.eclipse.commons.content.core/
+
+# STS (Spring Tool Suite)
+*.classpath
+*.class
+*.prefs
+*.jar
+*.lst
+*.project
+*.factorypath
+*.original
+**/target/
+**/.settings/
+**/.apt_generated/
+**/.sts4-cache/
+**/.springBeans/
+
+# 자바 관련 무시할 파일 확장자
+# Java
+*.class
+#*.jar
+*.war
+*.ear
+
+##META-INF
+META-INF/
+
+# 무시할 특정 확장자
+#specific extension to be ignored
+*.project
+*.classpath
+*.jsdtscope
+*.ini
+*.log
+*.class
+*.ear
+*.war
+
+# 무시할 노드.js 관련 확장자
+# Node.js
+node_modules/
+dist/
+build/
+
+# 무시할 일반적인 확장자
+# General
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
