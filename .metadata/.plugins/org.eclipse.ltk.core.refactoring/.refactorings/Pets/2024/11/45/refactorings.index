@@ -1,0 +1,58 @@
+1730766608018	Rename resource 'code.xml'
+1730853329375	Delete element
+1730853331450	Delete element
+1730859002104	Delete element
+1730859232486	Delete element
+1730859239005	Copy folder
+1730859242224	Delete element
+1730860955985	Delete element
+1730860957261	Delete element
+1730860957951	Delete element
+1730860958577	Delete element
+1730860959365	Delete element
+1730860959962	Delete element
+1730860960800	Delete element
+1730860961386	Delete element
+1730860961982	Delete element
+1730860962501	Delete element
+1730861097312	Delete elements
+1730861152606	Move file
+1730861158800	Rename resource 'index.html'
+1730861167694	Delete element
+1730861225647	Rename resource 'NewFile.jsp'
+1730861275302	Delete element
+1730861514588	Delete elements
+1730862619972	Delete element
+1730864783007	Copy folders
+1730864843081	Delete elements
+1730864847828	Copy folder
+1730864924476	Delete element
+1730869565691	Delete element
+1730871910874	Move folder
+1730872045504	Move folder
+1730872228146	Move folder
+1730873564888	Rename type 'index'
+1730873728252	Rename type 'reviewBoard'
+1730873741138	Rename type 'reviewBoardControll'
+1730874003773	Rename resource 'hospitalinfo.jsp'
+1730874012164	Rename type 'hospitalController'
+1730874092982	Rename resource 'waitanimalsboard.jsp'
+1730874152028	Rename resource 'recruitmentboard.jsp'
+1730877485578	Rename resource 'adoptapplication.jsp'
+1730877674561	Rename resource 'adoptionapplication.jsp'
+1730939534596	Delete element
+1730943994870	Rename package 'com.test.pet.adoptDTO'
+1730944008341	Rename package 'com.test.pet.adoptDAO'
+1730947502601	Rename package 'config'
+1730947509279	Move file
+1730947554973	Move file
+1730950785365	Rename type 'AdoptReviewListDAO'
+1730950792345	Rename type 'AdoptReviewListDTO'
+1730950916862	Rename type 'AdoptReviewDAO'
+1730950922459	Rename type 'AdoptReviewDTO'
+1730957987235	Rename package 'com.test.pet.DAO'
+1730957992019	Rename package 'com.test.pet.DTO'
+1730974479341	Rename resource 'reviewAdd.jsp'
+1730975334762	Delete element
+1730975348794	Rename resource 'adoptreview.jsp'
+1730975396618	Rename resource 'viewdetail.jsp'

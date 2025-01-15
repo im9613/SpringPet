@@ -1,0 +1,10 @@
+package com.test.pet.dto;
+
+@Getter
+@Setter
+public class MapDTO {
+
+	public String seq;
+	public String latitude;
+	public String longitude;
+}

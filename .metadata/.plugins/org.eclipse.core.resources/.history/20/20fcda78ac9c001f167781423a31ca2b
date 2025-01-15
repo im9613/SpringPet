@@ -1,0 +1,13 @@
+package com.test.pet.DAO;
+
+import java.util.List;
+
+import com.test.pet.DTO.AdoptReviewListDTO;
+
+public class AdoptReviewListDAO {
+
+	public List<AdoptReviewListDTO> list() {
+		return mapper.list();
+	}
+
+}

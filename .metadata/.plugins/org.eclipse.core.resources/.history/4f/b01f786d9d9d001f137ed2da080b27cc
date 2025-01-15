@@ -1,0 +1,23 @@
+package com.test.pet.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.test.pet.dto.ShelterDTO;
+import com.test.pet.mapper.InfoShelterMapper;
+
+@Repository
+public class ShelterDAO {
+
+	@Autowired
+	private InfoShelterMapper mapper;
+
+	public List<ShelterDTO> shelter() {
+		return mapper.list();
+	}
+	
+
+
+}

@@ -1,0 +1,13 @@
+package com.test.pet.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.test.pet.DTO.AdoptReviewDTO;
+
+
+public interface AdoptReviewMapper {
+	
+
+}

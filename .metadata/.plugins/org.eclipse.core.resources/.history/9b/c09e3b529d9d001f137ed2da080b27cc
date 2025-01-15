@@ -1,0 +1,26 @@
+package com.test.pet.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import com.test.pet.dto.ShelterDTO;
+
+@Controller
+public class shelterController {
+	
+	@Autowired
+	private ShelterDAO shelterDAO
+
+	@GetMapping("/shelter.do")
+	public String shelter(Model model) {
+		List<ShelterDTO> shelter = shelterDAO.shelter();
+		
+		model.addAttribute("shelter", shelter);
+		
+		return "info/shelterinfo";
+	}
+	
+}

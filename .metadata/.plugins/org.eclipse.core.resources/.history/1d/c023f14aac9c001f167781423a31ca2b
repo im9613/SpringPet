@@ -1,0 +1,9 @@
+package com.test.pet.DAO;
+
+public class AdoptReviewListDAO {
+
+	public List<AdoptReviewListDTO> list() {
+		return mapper.list();
+	}
+
+}

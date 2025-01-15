@@ -1,0 +1,5 @@
+package com.test.pet.adoptDTO;
+
+public class AdoptReviewListDTO {
+
+}

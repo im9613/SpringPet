@@ -1,0 +1,11 @@
+package com.test.pet.dto;
+
+public class ShelterDTO {
+
+	public String seq;
+	public String seqLoacation;
+	public String seqMap;
+	public String telephone;
+	public String address;
+	public String webaddress;
+}

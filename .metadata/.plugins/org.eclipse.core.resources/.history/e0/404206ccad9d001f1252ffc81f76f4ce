@@ -1,0 +1,100 @@
+package com.test.pet.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.test.pet.dao.AdoptReviewListDAO;
+import com.test.pet.dto.AdoptReviewListDTO;
+
+@Controller
+public class reviewBoardController {
+	
+	@Autowired
+	private AdoptReviewListDAO adoptReviewListDAO;
+
+	//게시판 목록 조회
+	@GetMapping("/review.do")
+	public String review(Model model) {
+		
+		List<AdoptReviewListDTO> reviewList = adoptReviewListDAO.getAdoptReviewList();
+		
+		model.addAttribute("reviewList", reviewList);
+		return "board/adoptionreviewboard";		//목록 페이지
+	}
+	
+	//게시글 조회
+	@GetMapping("/reviewdetail.do")
+	public String reviewdetail(Model model, String seq) {
+		AdoptReviewListDTO dto = adoptReviewListDAO.get(seq);
+		
+		model.addAttribute("AdoptReviewListDTO", dto);
+		return "board/reviewdetail";
+		
+	}
+	
+	
+	//게시글 추가
+	@GetMapping("/reviewadd.do")
+	public String reviewadd(Model model) {
+		
+		return "board/reviewadd";	//게시글 추가
+	}	
+		//게시글 추가 처리(전송)
+		@PostMapping("/reviewaddok.do")
+		public String reviewaddok(Model model, AdoptReviewListDTO dto) {
+			int result = adoptReviewListDAO.add(dto);
+					return "redirect:/board/adoptionreviewboard.do";
+		}
+		
+		
+	//게시글 수정
+	@GetMapping("/reviewedit.do")
+	public String reviewedit(Model model, String seq) {
+		AdoptReviewListDTO dto = adoptReviewListDAO.get(seq);
+		
+		model.addAttribute("AdoptReviewListDTO", dto);
+		return "borad/reviewedit";
+	}
+		//게시글 수정 처리(전송)
+		@PostMapping("/revieweditok.do")
+		public String reviewediteok(Model model, AdoptReviewListDTO dto) {
+			int result = adoptReviewListDAO.reviewedit(dto);
+			return "redirect:/board/reviewdetail.do?seq=" + dto.getSeq();
+		}
+		
+		
+	//게시글 삭제
+		@GetMapping("/reviewedel.do")
+		public String reviewedel(Model model, String seq) {
+			AdoptReviewListDTO dto = adoptReviewListDAO.get(seq);
+			
+			model.addAttribute("AdoptReviewListDTO", dto);
+			return "borad/reviewedel";
+		}
+			//게시글 삭제 처리(전송)
+			@PostMapping("/reviewedelok.do")
+			public String reviewedelok(Model model, AdoptReviewListDTO dto) {
+				int result = adoptReviewListDAO.reviewedit(dto);
+				return "redirect:/board/adoptionreviewboard";
+			}
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+

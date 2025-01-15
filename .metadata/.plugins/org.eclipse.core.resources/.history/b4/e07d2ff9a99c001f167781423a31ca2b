@@ -1,0 +1,8 @@
+package com.test.pet.mapper;
+
+public class AdoptReviewMapper {
+	
+	String getName(String id);
+	
+
+}

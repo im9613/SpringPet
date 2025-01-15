@@ -1,0 +1,23 @@
+package com.test.pet.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.test.pet.dao.ShelterDAO;
+import com.test.pet.dto.ShelterDTO;
+
+@Controller
+public class shelterController {
+
+	//보호소 조회
+	@GetMapping("/shelter.do")
+	public String shelter(Model model) {
+		List<ShelterDTO> shelterList = ShelterDAO.getShelter();
+		model.addAttribute("shelterList", shelterList);
+		return "info/shelterinfo";
+	}
+	
+}

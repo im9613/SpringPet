@@ -1,0 +1,5 @@
+package com.test.pet.dao;
+
+public class ShelterDAO {
+
+}

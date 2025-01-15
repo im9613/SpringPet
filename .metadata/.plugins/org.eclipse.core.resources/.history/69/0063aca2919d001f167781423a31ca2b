@@ -1,0 +1,13 @@
+package com.test.pet.dao;
+
+import java.util.List;
+
+import com.test.pet.dto.ShelterDTO;
+
+public class ShelterDAO {
+
+	public static List<ShelterDTO> getShelter() {
+		return mapper.list();
+	}
+
+}

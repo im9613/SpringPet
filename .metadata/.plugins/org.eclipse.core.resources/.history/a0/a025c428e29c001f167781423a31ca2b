@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.pet.mapper.AdoptReviewMapper">
+
+	<select id="list" resultType="AdoptReviewListDTO">
+		select seq, title, regdate from BoardAdoption order by seq desc
+	</select>
+	
+	<select id="get" resultType="AdoptReviewListDTO">
+	    select * from BoardAdoption where seq = #{seq}
+	</select>
+	
+	<!-- 글쓰기 -->
+	<insert id="add" parameterType="dto">
+		insert into Board (seq, idMember, idAdmin, seqPet, title, content, image, regdate)
+    		values (seqBoardAdoption.nextVal, #{idMember}, #{idAdmin}, #{seqPet}, #{title}, #{content}, #{memberid},#{image}, default)
+	</insert>
+
+</mapper>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.test.pet.mapper.InfoShelterMapper">
+
+	<select id="list" resultType="AdoptReviewListDTO">
+		select seq, title, regdate 
+			from BoardAdoption 
+				order by seq desc
+	</select>

@@ -1,0 +1,14 @@
+package com.test.pet.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class index {
+
+    @GetMapping("/index.do")  // "/pet/index.do"와 매핑
+    public String showIndexPage() {
+        return "index";  // "index.jsp"를 반환
+    }
+}

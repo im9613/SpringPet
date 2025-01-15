@@ -1,0 +1,16 @@
+package com.test.pet.adoptDAO;
+
+public class AdoptReviewListDAO {
+
+	String getName(Stringr id);
+	
+	int add(AdoptReviewListDTO dto);
+	
+	List<AdoptReviewListDTO> list();
+	
+	AdoptReviewListDTO get(String seq);
+	
+	int edit(AdoptReviewListDTO dto);
+	
+	int del(AdoptReviewListDTO dto);
+}

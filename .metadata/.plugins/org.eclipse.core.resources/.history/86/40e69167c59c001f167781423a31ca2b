@@ -1,0 +1,42 @@
+package com.test.pet.DAO;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.test.pet.DTO.AdoptReviewListDTO;
+import com.test.pet.mapper.AdoptReviewMapper;
+
+@Repository
+public class AdoptReviewListDAO {
+
+	  @Autowired
+	    private AdoptReviewMapper mapper;
+	  
+
+	    // 입양 후기 추가
+//	    public int add(AdoptReviewListDTO dto) {
+//	        return mapper.add(dto);
+//	    }
+
+	    // 입양 후기 목록 조회
+	    public List<AdoptReviewListDTO> getAdoptReviewList() {
+	        return mapper.list();
+	    }
+
+//	    // 특정 입양 후기 조회
+//	    public AdoptReviewListDTO get(String seq) {
+//	        return mapper.get(seq);
+//	    }
+//
+//	    // 입양 후기 수정
+//	    public int edit(AdoptReviewListDTO dto) {
+//	        return mapper.edit(dto);
+//	    }
+//
+//	    // 입양 후기 삭제
+//	    public int del(AdoptReviewListDTO dto) {
+//	        return mapper.del(dto);
+//	    }
+	}

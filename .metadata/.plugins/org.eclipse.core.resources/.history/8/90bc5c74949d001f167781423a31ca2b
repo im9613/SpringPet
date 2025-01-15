@@ -1,0 +1,30 @@
+package com.test.pet.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.test.pet.dto.ShelterDTO;
+
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/info")
+public class shelterController {
+	
+	private final ShelterDAO ShelterDAO;
+
+	//보호소 조회
+	@GetMapping("/shelter.do")
+	public String shelter(Model model) {
+		
+		List<ShelterDTO> shelterList = ShelterDAO.getShelter();
+		
+		model.addAttribute("shelterList", shelterList);
+		return "info/shelterinfo";
+	}
+	
+}

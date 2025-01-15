@@ -1,0 +1,22 @@
+package com.test.pet.DAO;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.test.pet.DTO.AdoptReviewListDTO;
+
+@Repository
+public class AdoptReviewListDAO {
+
+	@Autowired
+	private AdoptReviewMapper mapper;
+	public List<AdoptReviewListDTO> review() {
+		return mapper.review();
+	}
+	
+	public AdoptReviewListDTO get(String seq) {
+		return mapper.get(seq);
+	}
+
+}

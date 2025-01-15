@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+                           http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- DataSource 설정 -->
+    <bean class="com.zaxxer.hikari.HikariConfig" id="hikariConfig">
+        <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+        <property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"/>
+        <property name="username" value="spring"/>
+        <property name="password" value="java1234"/>
+    </bean>
+    
+    <bean class="com.zaxxer.hikari.HikariDataSource" id="dataSource">
+        <constructor-arg ref="hikariConfig"/>
+    </bean>
+    
+    <!-- SqlSessionFactory 설정 -->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sessionFactory">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:config/mybatis-config.xml"/>
+    </bean>
+    
+    <!-- SqlSessionTemplate 설정 -->
+    <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSessionTemplate">
+        <constructor-arg ref="sessionFactory"/>
+    </bean>  
+    
+    <!-- MyBatis 매퍼 스캔 -->
+    <mybatis-spring:scan base-package="com.test.spring.mapper"/>
+    
+    <!-- AdoptReviewListDAO 설정 -->
+    <bean class="com.test.pet.dao.AdoptReviewListDAO" id="adoptReviewListDAO">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+        <!-- 필요시 매퍼 의존성 주입 -->
+        <property name="adoptReviewListMapper" ref="adoptReviewListMapper"/>
+    </bean>
+    
+    <!-- AdoptReviewListMapper 설정 -->
+    <bean id="adoptReviewListMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.test.spring.mapper.AdoptReviewListMapper"/>
+        <property name="sqlSessionFactory" ref="sessionFactory"/>
+    </bean>
+
+</beans>

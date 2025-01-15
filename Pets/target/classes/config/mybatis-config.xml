@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+    <settings>
+        <!-- null 값 처리에 사용할 기본 JDBC 타입을 설정 -->
+        <setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+    
+	<typeAliases>
+	    <typeAlias alias="AdoptReviewListDTO" type="com.test.pet.dto.AdoptReviewListDTO"/>
+	    <typeAlias alias="ShelterDTO" type="com.test.pet.dto.ShelterDTO"/>
+	    <typeAlias alias="AnimalHospitalDTO" type="com.test.pet.dto.AnimalHospitalDTO"/>
+	</typeAliases>
+
+	
+</configuration>

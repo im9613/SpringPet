@@ -1,0 +1,32 @@
+package com.test.pet.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.test.pet.DAO.AdoptReviewListDAO;
+import com.test.pet.DTO.AdoptReviewListDTO;
+
+@Controller
+public class reviewBoardController {
+	
+	@Autowired
+	private AdoptReviewListDAO dao;
+
+	@GetMapping("/review.do")
+	public String review(Model model) {
+		List<AdoptReviewListDTO> review = dao.review();
+		return "board/adoptionreviewboard";
+	}
+	
+	@GetMapping("/view.do")
+	public String view(Model model, String seq) {
+		
+		AdoptReviewListDTO dto = dao.get(seq);
+		
+		model.addAttribute("dto", dto);
+		return "board/adoptionreviewboard";
+	}
+}

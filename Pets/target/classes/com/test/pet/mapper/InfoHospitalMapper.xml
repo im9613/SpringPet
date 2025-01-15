@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.pet.mapper.InfoHospitalMapper">
+
+ 	<select id="getHospital" resultType="AnimalHospitalDTO">
+        SELECT
+        	a.seq,
+        	a.name,
+        	a.telephone,
+        	m.latitude,
+        	m.longitude
+       	FROM AnimalHospital a
+       		LEFT JOIN Map m
+       			ON a.seq = m.seq
+       				ORDER BY a.seq asc
+    </select>
+    
+    
+</mapper>

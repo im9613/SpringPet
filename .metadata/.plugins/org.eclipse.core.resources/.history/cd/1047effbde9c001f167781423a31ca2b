@@ -1,0 +1,16 @@
+package com.test.pet.mapper;
+
+import java.util.List;
+
+import com.test.pet.dto.AdoptReviewListDTO;
+
+public interface AdoptReviewMapper {
+	
+	
+	public List<AdoptReviewListDTO> list();
+	
+	
+	AdoptReviewListDTO get(String seq);
+	
+
+}

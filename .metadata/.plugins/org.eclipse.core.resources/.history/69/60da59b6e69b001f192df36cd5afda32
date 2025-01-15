@@ -1,0 +1,14 @@
+package com.test.pet.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+@RequestMapping("/pet")  // /pet 경로로 시작하는 모든 요청을 처리
+public class index {
+
+    @GetMapping("/index.do")  // /pet/index.do 경로를 처리
+    public String showIndexPage() {
+        return "index";  // /WEB-INF/views/index.jsp 파일을 반환
+    }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.pet.mapper.AdoptReviewMapper">
+
+	<!-- 글목록 보기 -->
+	<select id="list" resultType="AdoptReviewListDTO">
+		select seq, title, regdate 
+			from BoardAdoption 
+				order by seq desc
+	</select>
+
+	<!-- 글쓰기 -->
+	<insert id="add" parameterType="AdoptReviewListDTO">
+		insert into BoardAdoption (seq, idMember, idAdmin, seqPet, title, content, #{image,typeHandler=com.test.pet.handler.NullToEmptyStringTypeHandler}, regdate)
+    		values (seqBoardAdoption.nextVal, #{idMember}, #{idAdmin}, #{seqPet}, #{title}, #{content}, #{image}, default)
+	</insert>
+	
+		<!-- 상세보기 -->
+	<select id="get" resultType="AdoptReviewListDTO">
+	    select * 
+	    	from BoardAdoption 
+	    		where seq = #{seq}
+	</select>
+	
+	<update id="edit">
+		update BoardAdoption set
+			title = #{title},
+			content = #{content}
+				where seq = #{seq}
+	</update>
+	
+	<delete id="del">
+		delete from BoardAdoption
+			where seq = #{seq}
+	</delete>
+	
+</mapper>

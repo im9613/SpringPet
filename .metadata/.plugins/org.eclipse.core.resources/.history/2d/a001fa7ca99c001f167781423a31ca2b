@@ -1,0 +1,5 @@
+package com.test.pet.adoptDAO;
+
+public class AdoptReviewListDAO {
+
+}

@@ -1,0 +1,24 @@
+package com.test.pet.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.test.pet.DTO.AdoptReviewListDTO;
+
+@Mapper
+public interface AdoptReviewMapper {
+	
+//	String getName(String id);
+//	
+//	int add(AdoptReviewListDTO dto);
+//	
+	List<AdoptReviewListDTO> review();
+//	
+	AdoptReviewListDTO get(String seq);
+//	
+//	int edit(AdoptReviewListDTO dto);
+//	
+//	int del(AdoptReviewListDTO dto);
+
+}
