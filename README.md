@@ -1,4 +1,4 @@
-# Spring Project
+# Spring Project 유기동물 입양 Web프로젝트
 
 ## 프로젝트 개요
 온라인 유기동물 입양 페이지입니다.
